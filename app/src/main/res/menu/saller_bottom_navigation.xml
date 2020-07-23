@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bt_Home"
+        android:icon="@drawable/home"
+        android:title="Home" />
+    <item
+        android:id="@+id/bt_services"
+        android:icon="@drawable/store"
+        android:title="Services" />
+    <item
+        android:id="@+id/bt_social"
+        android:icon="@drawable/cart"
+        android:title="Social" />
+    <item
+        android:id="@+id/bt_profile"
+        android:icon="@drawable/profile"
+        android:title="Profile" />
+</menu>
