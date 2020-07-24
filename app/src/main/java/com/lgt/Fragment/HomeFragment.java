@@ -1,10 +1,12 @@
 package com.lgt.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.lgt.Adaper.HomeAdapter;
 import com.lgt.Adaper.SlidingImage_Adapter;
 import com.lgt.Model.ProductModel;
+import com.lgt.rashanwala.CartActivity;
 import com.lgt.rashanwala.R;
 
 import java.util.ArrayList;
@@ -61,6 +64,7 @@ public class HomeFragment extends Fragment {
     private void initCategory() {
 
     }
+
     private void initList() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
         LinearLayoutManager layoutManager_two = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Rashan vala</string>
     <string name="search">Search Items</string>
+    <string name="product_name">Fresh Vagitable</string>
+    <string name="sample_sort_description">Most fresh vegetables are low in calories and have a water content in excess of 70 percent, with only about 3.5 percent protein and less than 1 percent fat....</string>
+    <string name="sample_info_description">Most fresh vegetables are low in calories and have a water content in excess of 70 percent, with only about 3.5 percent protein and less than 1 percent fat calories and have a water content in excess of 70 percent, with only about 3.5 percent protein....</string>
 </resources>

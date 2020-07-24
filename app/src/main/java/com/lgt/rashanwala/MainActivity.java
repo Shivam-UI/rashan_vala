@@ -6,17 +6,24 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.lgt.Common.CommonCheck;
 import com.lgt.Fragment.HomeFragment;
+import com.lgt.Fragment.OfferFragment;
+import com.lgt.Fragment.ProfileFragment;
 import com.lgt.Fragment.StoreFragment;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView mBottomNavigationView;
+    ImageView iv_cart_list_view;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +34,14 @@ public class MainActivity extends AppCompatActivity {
         loadFragment(new HomeFragment());
         // set navigation
         mBottomNavigationView = findViewById(R.id.bnv_bottomNavigation);
-
+        iv_cart_list_view = findViewById(R.id.iv_cart_list_view);
+        iv_cart_list_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CartActivity.class));
+                finishAffinity();
+            }
+        });
         mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -36,16 +50,16 @@ public class MainActivity extends AppCompatActivity {
                         loadFragment(new HomeFragment());
                         break;
                     case R.id.bt_Store:
-                        Toast.makeText(MainActivity.this, "Store", Toast.LENGTH_SHORT).show();
+                        loadFragment(new StoreFragment());
                         break;
                     case R.id.bt_cart:
                         Toast.makeText(MainActivity.this, "Cart", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.bt_delivery:
-                        Toast.makeText(MainActivity.this, "Offers", Toast.LENGTH_SHORT).show();
+                        loadFragment(new OfferFragment());
                         break;
                     case R.id.bt_profile:
-                        Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_SHORT).show();
+                        loadFragment(new ProfileFragment());
                         break;
                     default:
                         loadFragment(new HomeFragment());

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lgt.rashanwala">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_rashan_wala"
@@ -9,7 +11,9 @@
         android:roundIcon="@drawable/ic_rashan_wala"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProflieActivity"></activity>
+        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".SingleProductActivity" />
+        <activity android:name=".ProflieActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".SigninActivity" />
         <activity android:name=".SignUpActivity" />

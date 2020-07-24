@@ -76,6 +76,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_add_to_cart"
             android:background="@color/red"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
