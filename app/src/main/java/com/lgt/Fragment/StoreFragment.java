@@ -38,7 +38,7 @@ public class StoreFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false);
         rv_store_name_list.hasFixedSize();
         rv_store_name_list.setLayoutManager(layoutManager);
-        // init store list
+        // init store list sakshi4740 123456
         initStoreList();
         return view;
     }

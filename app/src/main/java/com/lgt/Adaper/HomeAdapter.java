@@ -2,6 +2,7 @@ package com.lgt.Adaper;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,13 +41,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeItemHolder
     @Override
     public HomeItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = layoutInflater.inflate(R.layout.product_list_items, parent, false);
-
         return new HomeItemHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final HomeItemHolder holder, int position) {
         holder.iv_product_image.setImageResource(mList.get(position).image);
+        holder.tv_price_old.setPaintFlags(holder.tv_price_old.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         holder.ll_add_to_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,13 +63,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeItemHolder
     }
 
     public class HomeItemHolder extends RecyclerView.ViewHolder {
-        TextView tv_product_name;
+        TextView tv_product_name,tv_price_old;
         ImageView iv_product_image;
         LinearLayout ll_add_to_cart;
         public HomeItemHolder(@NonNull View itemView) {
             super(itemView);
             tv_product_name = itemView.findViewById(R.id.tv_product_name);
             iv_product_image = itemView.findViewById(R.id.iv_product_image);
+            tv_price_old = itemView.findViewById(R.id.tv_price_old);
             ll_add_to_cart = itemView.findViewById(R.id.ll_add_to_cart);
         }
     }

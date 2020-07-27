@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
                         loadFragment(new StoreFragment());
                         break;
                     case R.id.bt_cart:
-                        Toast.makeText(MainActivity.this, "Cart", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this,CartActivity.class));
+                        finishAffinity();
                         break;
                     case R.id.bt_delivery:
                         loadFragment(new OfferFragment());

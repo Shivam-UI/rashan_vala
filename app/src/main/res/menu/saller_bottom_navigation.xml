@@ -5,13 +5,13 @@
         android:icon="@drawable/home"
         android:title="Home" />
     <item
-        android:id="@+id/bt_services"
-        android:icon="@drawable/store"
-        android:title="Services" />
+        android:id="@+id/bt_category"
+        android:icon="@drawable/ic_category"
+        android:title="Category" />
     <item
-        android:id="@+id/bt_social"
+        android:id="@+id/bt_order"
         android:icon="@drawable/cart"
-        android:title="Social" />
+        android:title="Order" />
     <item
         android:id="@+id/bt_profile"
         android:icon="@drawable/profile"

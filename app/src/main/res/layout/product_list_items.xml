@@ -42,6 +42,7 @@
         </FrameLayout>
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_product_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,38 +60,42 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <TextView
-                android:id="@+id/tv_days"
+                android:id="@+id/tv_price_new"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="5 days ago" />
+                android:text="₹ 39.50" />
 
             <TextView
-                android:id="@+id/tv_price"
+                android:id="@+id/tv_price_old"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:text="₹ 49.50" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/ll_add_to_cart"
-            android:background="@color/red"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:padding="10dp">
 
             <TextView
-                android:textColor="@color/white"
                 android:id="@+id/_tv_add_to_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ADD TO CART" />
+                android:text="ADD TO CART"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
