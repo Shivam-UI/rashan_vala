@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        app:cardCornerRadius="5dp"
-        android:elevation="5dp">
+        android:elevation="5dp"
+        app:cardCornerRadius="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,44 +62,65 @@
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
                             android:maxLines="2"
-                            android:textColor="@color/colorAccent"
                             android:padding="2dp"
-                            android:text="Wouldn’t it make more sense for Yoast to use the main description box" />
+                            android:text="Wouldn’t it make more sense for Yoast to use the main description box"
+                            android:textColor="@color/colorAccent" />
 
 
                     </LinearLayout>
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv_date_of_added"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="10dp"
-                    android:padding="2dp"
-                    android:text="15 Min Ago" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_date_of_added"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="15 Min Ago" />
+
+                    <TextView
+                        android:id="@+id/tv_product_status"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:text="status" />
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/iv_check"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="right"
+                    android:visibility="visible"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/ic_check" />
 
                 <ImageView
+                    android:id="@+id/iv_uncheck"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_gravity="right"
+                    android:visibility="gone"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/ic_uncheck" />

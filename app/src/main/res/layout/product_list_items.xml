@@ -33,11 +33,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:background="@drawable/circle_shape"
                 android:gravity="center"
-                android:padding="8dp"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                style="@style/TextAppearance.AppCompat.Body1"
                 android:src="@drawable/product_1"
-                android:text="+5" />
+                android:textSize="10sp"
+                android:text="5% OFF" />
 
         </FrameLayout>
 

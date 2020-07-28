@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,7 +52,15 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeItemHolder
         holder.ll_add_to_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(mContext, "Item Added", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent product = new Intent(mContext, SingleProductActivity.class);
+                product.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(product);
             }
         });

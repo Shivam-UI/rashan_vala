@@ -18,10 +18,28 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/iv_product_main_banner"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
+                android:layout_height="500dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/category_6" />
+
+            <FrameLayout
+                android:id="@+id/fl_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/circle_background"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_back_press"
+                    android:tint="@color/colorPrimary" />
+
+            </FrameLayout>
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -38,43 +56,51 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="400dp"
+                android:layout_marginTop="450dp"
                 android:background="@drawable/product_item_corner"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <TextView
-                    android:id="@+id/tv_product_name"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                <LinearLayout
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/product_name" />
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tv_product_sort_description"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:lineHeight="23dp"
-                    android:text="@string/sample_sort_description"
-                    android:textColor="@color/colorAccent" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_product_image_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:gravity="right"
                     android:orientation="horizontal"
                     android:padding="5dp">
 
                     <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="₹ 59.50 KG"
+                        android:background="@color/colorPrimary"
+                        android:gravity="left"
+                        android:padding="10dp"
+                        android:text="20% OFF"
+                        android:textColor="@color/white" />
+
+                    <TextView
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginRight="20dp"
-                        android:layout_height="wrap_content"/>
+                        android:layout_weight="1"
+                        android:text="₹ 59.50 KG"
+                        android:textAlignment="textEnd"
+                        tools:ignore="RtlCompat" />
 
                     <ImageView
                         android:id="@+id/iv_add_count"
@@ -124,19 +150,65 @@
                         android:textSize="10sp" />
 
                 </LinearLayout>
+
                 <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:background="@color/colorAccent"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"/>
-
+                    android:background="@color/colorAccent" />
 
                 <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_product_name"
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/product_name" />
+
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/colorPrimary"
+                        android:text="Full Description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_product_sort_description"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:lineHeight="23dp"
+                        android:text="@string/sample_sort_description"
+                        android:textColor="@color/colorAccent" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:textColor="@color/colorPrimary"
+                        android:text="Sort Description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
@@ -155,7 +227,17 @@
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
+
+                <View
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorAccent" />
+
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -179,6 +261,13 @@
 
                 </LinearLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorAccent" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -201,12 +290,14 @@
                         android:textSize="10sp" />
 
                 </LinearLayout>
+
                 <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:background="@color/colorAccent"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"/>
+                    android:background="@color/colorAccent" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_user_review_list"
                     android:layout_width="match_parent"
@@ -253,6 +344,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/ll_save_for_later"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -281,6 +373,7 @@
             android:layout_height="15dp" />
 
         <LinearLayout
+            android:id="@+id/ll_add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="bottom"

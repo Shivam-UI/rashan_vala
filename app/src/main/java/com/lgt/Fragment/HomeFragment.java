@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -69,10 +70,12 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
         LinearLayoutManager layoutManager_two = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
         LinearLayoutManager layoutManager_there = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
+
         LinearLayoutManager layoutManager_four = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
         rv_category_one.setLayoutManager(layoutManager);
         rv_category_two.setLayoutManager(layoutManager_two);
         rv_category_three.setLayoutManager(layoutManager_there);
+        //rv_category_three.setLayoutManager(new GridLayoutManager(getContext(),2));
         rv_recent_items_products.setLayoutManager(layoutManager_four);
         List<ProductModel> mlist_one = new ArrayList<>();
         List<ProductModel> mlist_two = new ArrayList<>();

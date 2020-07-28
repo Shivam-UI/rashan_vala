@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class shopOrderFragment extends Fragment {
     RecyclerView rv_order_details;
     ArrayList<String> productList = new ArrayList<>();
+    ArrayList<String> status = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.shop_order_fragment, container, false);
@@ -35,13 +36,21 @@ public class shopOrderFragment extends Fragment {
     }
 
     private void setRecentProductAdapter() {
+        // product name
         productList.add("Whole wheat bread");
         productList.add("Pita pockets");
         productList.add("English muffins");
         productList.add("Whole-grain");
         productList.add("Flour tortillas");
         productList.add("Ground turkey");
-        OrderAdapter orderAdapter = new OrderAdapter(getContext(), productList);
+        // product status
+        status.add("P");
+        status.add("D");
+        status.add("C");
+        status.add("D");
+        status.add("P");
+        status.add("C");
+        OrderAdapter orderAdapter = new OrderAdapter(getContext(), productList,status);
         rv_order_details.setAdapter(orderAdapter);
     }
 }

@@ -30,10 +30,10 @@ public class SignUpActivity extends AppCompatActivity {
         intent = getIntent();
         String KEY_UP = intent.getStringExtra("KEY_SIGN");
         if (KEY_UP.equalsIgnoreCase("buyers")) {
-            Toast.makeText(this, "buyers", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "buyers", Toast.LENGTH_SHORT).show();
             ll_store_name_container.setVisibility(View.GONE);
         } else if (KEY_UP.equalsIgnoreCase("Shopkeeper")) {
-            Toast.makeText(this, "Shopkeeper", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Shopkeeper", Toast.LENGTH_SHORT).show();
         }
         init();
     }

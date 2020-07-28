@@ -8,5 +8,6 @@
     <color name="lightNavigationColor">#A2E84B</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="white_transparent">#BFFFFFFF</color>
     <color name="red">#F65A5A</color>
 </resources>

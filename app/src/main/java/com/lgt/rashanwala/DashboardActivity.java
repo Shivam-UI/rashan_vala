@@ -39,9 +39,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class DashboardActivity extends AppCompatActivity {
 
     BottomNavigationView bnv_bottomNavigation;
+    private static long back_pressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,5 +91,31 @@ public class DashboardActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (back_pressed + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+        } else {
+            //Toast.makeText(getBaseContext(), "Press once again to exit",Toast.LENGTH_SHORT).show();
+            back_pressed = System.currentTimeMillis();
+            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this,SweetAlertDialog.SUCCESS_TYPE);
+            sweetAlertDialog.setTitle("Exit");
+            sweetAlertDialog.setContentText("You Really Want To Exit");
+            sweetAlertDialog.setCancelButton("Cancel", new SweetAlertDialog.OnSweetClickListener() {
+                @Override
+                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                    sweetAlertDialog.dismissWithAnimation();
+                }
+            });
+            sweetAlertDialog.setConfirmButton("Conform", new SweetAlertDialog.OnSweetClickListener() {
+                @Override
+                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                    finishAffinity();
+                }
+            });
+            sweetAlertDialog.show();
+        }
     }
 }
